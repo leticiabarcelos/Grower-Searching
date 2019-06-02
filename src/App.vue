@@ -6,19 +6,23 @@
 </template>
 
 <script>
-  import Grower from './Grower.vue'
-  import Properties from './Properties.vue'
+import Grower from "./Grower.vue";
+import Properties from "./Properties.vue";
 
-  export default {
-    components: {
-      Grower,
-      Properties
-    }
+export default {
+  components: {
+    Grower,
+    Properties
   }
+};
 </script>
 <style>
-  body {
-    margin-top: 0px;
-    margin-bottom: 0px
-  }
+head {
+  background-color: #eec591;
+}
+body {
+  background-color: #eec591;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 </style>

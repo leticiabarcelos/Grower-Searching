@@ -257,7 +257,8 @@ export default {
     display: flex; 
     border-radius: 5px;
     margin-top: 250px;
-    margin-right: 250px;}
+    margin-right: 250px;
+}
 .title{
     text-align: center;
     color: black;
@@ -276,9 +277,10 @@ export default {
   border-radius: 5px;
   border-color: rgb(161, 109, 41);
 }
-.pagination button{
+.pagination{
   height: 35px;
   border-radius: 5px;
   text-align: center;
+  background-color: #EEC591;
 }
 </style>

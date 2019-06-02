@@ -249,6 +249,5 @@ export default {
           width: auto;
           height: auto;
           background-color: #EEC591;
-          background-image: url('http://emojipedia.com.br/assets/img/emoji/1f331.png');
       }
 </style>
