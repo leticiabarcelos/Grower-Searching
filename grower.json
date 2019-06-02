@@ -29,11 +29,6 @@
       "id": 6,
       "name": "Letícia Ferreira Barcelos",
       "cpf": "09410540631"
-    },
-    {
-      "id": 7,
-      "name": "Delma Ferreira Barcelos",
-      "cpf": 58490531153
     }
   ],
   "properties": [
@@ -106,13 +101,6 @@
       "total_area": 3521,
       "city": "Alto Horizonte",
       "growerId": 4
-    },
-    {
-      "id": 12,
-      "name": "Covil dos Loucos",
-      "total_area": 585,
-      "city": "Santo Antônio de Pose",
-      "growerId": 5
     },
     {
       "id": 13,

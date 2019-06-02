@@ -5,17 +5,20 @@
       <h1 class="title">Propriedades</h1>
       <div class="columns">
           <p class="control has-addons"> 
-            <input class="searching" type="text" placeholder="Procure pelo nome do produtor..." v-model="search">
+            <input class="searching" type="text" placeholder="Procure pelo nome da propriedade..." v-model="search">
             <a class="button general" @click.prevent="searchProperties">Pesquisar</a>
           </p>
         <div class="column is-6">
-        </div>
 
+        </div>
+          <a class="button general" @click.prevent="newProperties">Novo</a>
       </div>
+
       <div class="columns">
         <div class="column is-12">
           <table class="table is-narrow is-bordered">
             <thead>
+              <th>Produtor</th>
               <th>Nome Propriedade</th>
               <th>Área Total</th>
               <th>Cidade</th>
@@ -23,6 +26,7 @@
             </thead>
             <tbody>
               <tr v-for="property in sortedProperties" :key="property.id">
+                <td>{{property.growerId}}</td>
                 <td>{{property.name}}</td>
                 <td>{{property.total_area}}</td>
                 <td>{{property.city}}</td>
@@ -50,10 +54,12 @@
           <button class="delete" @click.prevent="showModal=false"></button>
         </header>
         <section class="modal-card-body">
-
-        <div class="columns">
           <div class="column">
-        <section class="modal-card-body">
+            <label class="label">Produtor</label>
+              <p class="control">
+                <input class="input" type="text" placeholder="Produtor" v-model="selected.growerId">
+              </p>
+          </div>
         <div class="columns">
           <div class="column">
             <label class="label">Nome Propriedade</label>
@@ -243,6 +249,6 @@ export default {
           width: auto;
           height: auto;
           background-color: #EEC591;
-          background-image: url('http://clipart.coolclips.com/480/vectors/tf05139/CoolClips_vc002361.png');
+          background-image: url('http://emojipedia.com.br/assets/img/emoji/1f331.png');
       }
 </style>

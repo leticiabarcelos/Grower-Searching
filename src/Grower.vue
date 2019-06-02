@@ -12,18 +12,20 @@
 
         </div>
           <a class="button general" @click.prevent="newGrower">Novo</a>
-
       </div>
+      
       <div class="columns">
         <div class="column is-12">
           <table class="table is-narrow is-bordered">
             <thead>
+              <th>Identificador Produtor</th>
               <th>Nome</th>
               <th>CPF</th>
               <th>Ações</th>
             </thead>
             <tbody>
               <tr v-for="producer in sortedGrower" :key="producer.id">
+                <td>{{producer.id}}</td>
                 <td>{{producer.name}}</td>
                 <td>{{producer.cpf}}</td>
                 <td class="is-icon">
@@ -62,28 +64,6 @@
             <label class="label">CPF</label>
         <p class="control">
           <input class="input" type="text" placeholder="CPF" v-model="selected.cpf">
-        </p>
-          </div>
-          </div>
-        </section>
-        <section class="modal-card-body">
-        <div class="columns">
-          <div class="column">
-            <label class="label">Nome Propriedade</label>
-              <p class="control">
-                <input class="input" type="text" placeholder="Nome Propriedade" v-model="selected.name">
-              </p>
-          </div>
-          <div class="column">
-            <label class="label">Área Total</label>
-        <p class="control">
-          <input class="input" type="text" placeholder="Área Total" v-model="selected.cpf">
-        </p>
-          </div>
-          <div class="column">
-            <label class="label">Cidade</label>
-        <p class="control">
-          <input class="input" type="text" placeholder="Cidade da Propriedade" v-model="selected.cpf">
         </p>
           </div>
           </div>
@@ -276,9 +256,8 @@ export default {
     text-align: center; 
     display: flex; 
     border-radius: 5px;
-    top: 2  50px;
-    left: 250px;
-    margin-right: -50%;}
+    margin-top: 250px;
+    margin-right: 250px;}
 .title{
     text-align: center;
     color: black;
