@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Grower from "./Grower.vue";
-import Properties from "./Properties.vue";
+import Grower from "./components/grower/Grower.vue";
+import Properties from "./components/properties/Properties.vue";
 
 export default {
   components: {
@@ -16,13 +16,7 @@ export default {
   }
 };
 </script>
-<style>
-head {
-  background-color: #eec591;
-}
-body {
-  background-color: #eec591;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+
+<style lang="scss">
+  @import './style';
 </style>

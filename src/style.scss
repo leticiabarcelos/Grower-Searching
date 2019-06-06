@@ -1,0 +1,56 @@
+head {
+    background-color: #eec591;
+}
+
+body {
+    background-color: #eec591;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.background {
+    position: relative;
+    margin: auto;
+    width: auto;
+    height: auto;
+    background-color: #EEC591;
+}
+
+.fix {
+    position: absolute;
+    background: rgb(138, 103, 68);
+    width: 50%;
+    text-align: center;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 250px;
+    margin-right: 250px;
+}
+
+.title {
+    text-align: center;
+    color: black;
+}
+
+.searching {
+    text-align: center;
+    width: 500px;
+    height: 35px;
+    border-color: rgb(161, 109, 41);
+    border-radius: 5px;
+}
+
+.general {
+    height: 35px;
+    background-color: white;
+    color: rgb(161, 109, 41);
+    border-radius: 5px;
+    border-color: rgb(161, 109, 41);
+}
+
+.pagination {
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #EEC591;
+}
