@@ -6,6 +6,7 @@ export default {
         return {
             title: 'Crud Properties',
             search: '',
+            grower: [],
             properties: [],
             page: 1,
             total: 0,
@@ -62,13 +63,25 @@ export default {
             this.$http.get(`/properties?_start=${start}&_end=${end}${qString}`).then(
                 response => {
                     this.properties = response.json()
-                    this.total = response.headers['X-Total-Count']
+                    this.total = this.properties.lenght
                 },
                 error => {
                     console.log(error)
                 }).finally(function () {
                     this.hideLoading();
                 })
+        },
+
+        loadGrower() {
+        this.$http.get(`/grower`).then(
+            response => {
+                this.grower = response.json()
+            },
+            error => {
+                console.log(error)
+            }).finally(function () {
+                this.hideLoading();
+            })
         },
 
         searchProperties() {
@@ -111,7 +124,7 @@ export default {
             if (this.selected.id != null) {
                 this.$http.put(`/properties/${this.selected.id}`, this.selected).then(
                     response => {
-                        this.$set('selected', {})
+                        this.selected = {}
                         this.$set('showModal', false)
                     },
                     error => {
@@ -124,7 +137,7 @@ export default {
             else {
                 this.$http.post(`/properties`, this.selected).then(
                     response => {
-                        this.$set('selected', {})
+                        this.selected = {}
                         this.$set('showModal', false)
                     },
                     error => {
@@ -134,16 +147,20 @@ export default {
                     this.loadProperties()
                 )
             }
+        },
+    findGrower(growerId){
+            return _.find(this.grower, function(o) {return o.id === growerId}).name
         }
     },
 
     created() {
         this.loadProperties();
+        this.loadGrower();
     },
 
     computed: {
         sortedProperties() {
             return this.properties.sort((t1, t2) => t1.name < t2.name ? -1 : 1);
-        },
+        }
     }
 }

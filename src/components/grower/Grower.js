@@ -7,13 +7,14 @@ export default {
             title: 'Crud Grower',
             search: '',
             grower: [],
+            properties: [],
             page: 1,
             total: 0,
             selected: {},
             itensPerPage: 20,
             isLoading: false,
-            showEditModal:false,
-            showNewModal:false
+            showEditModal: false,
+            showNewModal: false
         }
     },
     mounted: {
@@ -51,7 +52,7 @@ export default {
             this.$http.get(`/grower?_start=${start}&_end=${end}${qString}`).then(
                 response => {
                     this.grower = response.json()
-                    this.total = response.headers['X-Total-Count']
+                    this.total = this.grower.lenght
                 },
                 error => {
                     console.log(error)
@@ -75,7 +76,7 @@ export default {
         },
 
         removeGrower(producer) {
-          let t = this;
+            let t = this;
             swal({
                 title: `Deseja apagar o produtor "${producer.name}"?`,
                 type: "warning",
@@ -99,7 +100,7 @@ export default {
             if (this.selected.id != null) {
                 this.$http.put(`/grower/${this.selected.id}`, this.selected).then(
                     response => {
-                        this.$set('selected', {})
+                        this.selected = {}
                         this.$set('showEditModal', false)
                     },
                     error => {
@@ -112,7 +113,7 @@ export default {
             else {
                 this.$http.post(`/grower`, this.selected).then(
                     response => {
-                        this.$set('selected', {})
+                        this.selected = {}
                         this.$set('showNewModal', false)
                     },
                     error => {
@@ -132,6 +133,6 @@ export default {
     computed: {
         sortedGrower() {
             return this.grower.sort((t1, t2) => t1.name < t2.name ? -1 : 1);
-        },
-    },
+        }
+    }
 }

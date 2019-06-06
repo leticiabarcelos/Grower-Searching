@@ -26,7 +26,7 @@
             </thead>
             <tbody>
               <tr v-for="property in sortedProperties" :key="property.id">
-                <td>{{property.growerId}}</td>
+                <td>{{findGrower(property.growerId)}}</td>
                 <td>{{property.name}}</td>
                 <td>{{property.total_area}}</td>
                 <td>{{property.city}}</td>
@@ -53,14 +53,14 @@
           <p class="modal-card-title">Propriedade {{selected.name}}</p>
           <button class="delete" @click.prevent="showModal=false"></button>
         </header>
-        <section class="modal-card-body">
-          <div class="column">
-            <label class="label">Produtor</label>
+        <section class="modal-card-body">   
+        <div class="columns">
+        <div class="column">
+            <label class="label">Proprietário</label>
               <p class="control">
-                <input class="input" type="text" placeholder="Produtor" v-model="selected.growerId">
+                <input class="input" type="text" placeholder="Proprietário" v-model="selected.growerId">
               </p>
           </div>
-        <div class="columns">
           <div class="column">
             <label class="label">Nome Propriedade</label>
               <p class="control">

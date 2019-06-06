@@ -18,14 +18,12 @@
         <div class="column is-12">
           <table class="table is-narrow is-bordered">
             <thead>
-              <th>Identificador Produtor</th>
               <th>Nome</th>
               <th>CPF</th>
               <th>Ações</th>
             </thead>
             <tbody>
               <tr v-for="producer in sortedGrower" :key="producer.id">
-                <td>{{producer.id}}</td>
                 <td>{{producer.name}}</td>
                 <td>{{producer.cpf}}</td>
                 <td class="is-icon">
